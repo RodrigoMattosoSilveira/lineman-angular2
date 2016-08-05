@@ -2,8 +2,57 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.0.5] - unreleased
+This was originally written as an extension of the [lineman-angular](https://github.com/linemanjs/lineman-angular) plugin, which was instrumental for me to get it to work. It turns out that Angular 2 is so different that it makes sense to remove this dependency.
+
+### Updates
+* Changed the assumed file structure. The assumed file structure will be:
+````bash
+your-project-name
+|-- .gitignore
+|-- app/
+    |
+    |- main/
+       |- main.css
+       |- main.html
+       |- main.ts
+    |- yourModuleA/
+       |- moduleA.css
+       |- moduleA.html
+       |- moduleA.ts
+    |- .../
+    |- yourModuleN/
+       |- moduleN.css
+       |- moduleN.html
+       |- moduleN.ts    
+    |- app.css
+    |- bootstrap.ts
+|-- config/
+|-- dist/
+|-- generated/
+|-- node_modules/
+|-- spec/
+    |
+    |- *_spec.ts
+|-- spec-e2e/
+    |
+    |- *_spec-e2e.ts
+|-- tasks/
+|-- CHANGELOG.md
+|-- Gruntfile.js
+|-- LICENSE
+|-- README.md
+|-- index.html
+|-- package.json
+|-- systems.config.js
+|-- tslint.json
+|-- typings.json
+````
+* Updated the plugin logic to reflect the new folder structure.
+
 ## [0.0.4] - 2016-07-31
 Fixed bug injected in v0.0.3 (my apologies, I'm still learning about how to support open source node plugins - easier said than done!)
+
 ## [0.0.3] - 2016-07-30
 A few minor refactoring in preparation for a majod change to its sister project, lineman-angular2-template whereby it will transition to be a pure Angular 2 template.
 
