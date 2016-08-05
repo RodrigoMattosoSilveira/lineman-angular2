@@ -206,7 +206,7 @@ module.exports = function(lineman) {
                     "tasks": ["copy:ng2-html-files-to-generated"]
                 },
                 ng2_index: {
-                    "files": "index.htnl",
+                    "files": "index.html",
                     "tasks": ["copy:ng2-index-file-to-generated"]
                 },
                 ng2_systemjs: {
