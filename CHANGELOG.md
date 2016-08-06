@@ -2,7 +2,18 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.0.5] - unreleased
+## [0.0.6] - 2016 08 06
+This was originally written as an extension of the [lineman-angular](https://github.com/linemanjs/lineman-angular) plugin, which was instrumental for me to get it to work. It turns out that Angular 2 is so different that it makes sense to remove this dependency.
+
+### Updates
+### Fixed the following bugs
+1. watch:ng2_ts copies files to generated unnecessarily - the ts task routes the files to generated, rendering the copy surplefous
+1. lineman build does not copy compiled ts files to their dist folders.
+
+### Added functionality
+1. Clear the generated and dist folders 
+
+## [0.0.5] - 2016 08 06
 This was originally written as an extension of the [lineman-angular](https://github.com/linemanjs/lineman-angular) plugin, which was instrumental for me to get it to work. It turns out that Angular 2 is so different that it makes sense to remove this dependency.
 
 ### Updates

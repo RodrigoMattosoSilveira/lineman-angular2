@@ -1,9 +1,7 @@
 # lineman-angular2
 
 ## Introduction
-This is a plugin to get started with Angular.js using [Lineman](http://linemanjs.com). This plugin started as a fork of [lineman-angular](https://github.com/linemanjs/lineman-angular) lineman plugin for Angular 1. Its goal is to add support for [Angular 2](https://angular.io/). 
-
-Using this plugin you can build pure [Angular 2](https://angular.io/) applications.
+This is a plugin to get started with Angular 2 using [Lineman](http://linemanjs.com). This plugin started as a fork of [lineman-angular](https://github.com/linemanjs/lineman-angular) lineman plugin for Angular 1, and re-factored it to support the development of pure [Angular 2](https://angular.io/) applications.
 
 We recommend you look at a [Angular 2 template project](https://github.com/RodrigoMattosoSilveira/lineman-angular2-template/)  as a starting point.
 

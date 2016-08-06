@@ -238,7 +238,7 @@ module.exports = function(lineman) {
              * Workflow configuration
              */
             prependTasks: {
-                common: lineman.config.application.prependTasks.common.concat(["ts:development"]),
+                common: ["clean:generated", "clean:dist", "ts:development"].concat(lineman.config.application.prependTasks.common),
                 dev: ["copy:ng2-systemjs-file-to-generated", "copy:ng2-index-file-to-generated", "copy:ng2-all-files-to-generated", "copy:ng2-libs-to-generated"].concat(lineman.config.application.prependTasks.dev),
                 dist: ["copy:ng2-systemjs-file-to-dist", "copy:ng2-index-file-to-dist", "copy:ng2-all-files-to-dist",  "copy:ng2-traspiled-files-to-dist", "copy:ng2-libs-to-dist"].concat(lineman.config.application.prependTasks.dev)
             }
