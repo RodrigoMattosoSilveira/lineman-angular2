@@ -32,6 +32,9 @@ module.exports = function(lineman) {
                     generated: "generated/",
                     dist: "dist/"
                 },
+                transpiled: [
+                    "**/*.js"
+                ],
                 ts: [
                     // used in conjunction with the CWD option
                     "**/*.ts"
@@ -124,6 +127,12 @@ module.exports = function(lineman) {
                     src: ["<%= files.ng2.css %>", "<%= files.ng2.html %>", "<%= files.ng2.img %>"],
                     dest: "<%= files.ng2.dist %>"
                 },
+                "ng2-traspiled-files-to-dist": {
+                    expand: true,
+                    cwd:  "<%= files.ng2.generated %>",
+                    src: ["<%= files.ng2.transpiled %>"],
+                    dest: "<%= files.ng2.dist %>"
+                },
                 // Copies the angular 2 libraries to the dist folder.
                 // Executed by the "lineman build" command
                 "ng2-index-file-to-dist": {
@@ -191,6 +200,11 @@ module.exports = function(lineman) {
                 }
             },
 
+            clean: {
+                generated: ["generated/*"],
+                dist: ["dist/*"]
+            },
+
             /*
              * Watch configuration
              */
@@ -216,7 +230,7 @@ module.exports = function(lineman) {
                 // renamed & deleted files remain in place, restarting lineman run will fix it
                 ng2_ts: {
                     "files": "<%= files.ng2.ts %>",
-                    "tasks": ["ts:development", "copy:ng2-ts-files-to-generated"]
+                    "tasks": ["ts:development"]
                 }
             },
 
@@ -226,7 +240,7 @@ module.exports = function(lineman) {
             prependTasks: {
                 common: lineman.config.application.prependTasks.common.concat(["ts:development"]),
                 dev: ["copy:ng2-systemjs-file-to-generated", "copy:ng2-index-file-to-generated", "copy:ng2-all-files-to-generated", "copy:ng2-libs-to-generated"].concat(lineman.config.application.prependTasks.dev),
-                dist: ["copy:ng2-systemjs-file-to-dist", "copy:ng2-index-file-to-dist", "copy:ng2-all-files-to-dist", "copy:ng2-libs-to-dist"].concat(lineman.config.application.prependTasks.dev)
+                dist: ["copy:ng2-systemjs-file-to-dist", "copy:ng2-index-file-to-dist", "copy:ng2-all-files-to-dist",  "copy:ng2-traspiled-files-to-dist", "copy:ng2-libs-to-dist"].concat(lineman.config.application.prependTasks.dev)
             }
         }
     };
